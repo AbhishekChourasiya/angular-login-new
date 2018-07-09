@@ -10,25 +10,25 @@
 
   <mat-table #table [dataSource]="dataSource" matSort>
 
-      <ng-container matColumnDef="id">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> id </mat-header-cell>
-          <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> name </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="progress">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> progress </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{row.progress}} </mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="color">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> color </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{row.color}} </mat-cell>
-              </ng-container>
-                            
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> id </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="progress">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> progress </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.progress}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="color">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> color </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.color}} </mat-cell>
+    </ng-container>
 
-<!-- 
+
+    <!-- 
     <ng-container matColumnDef="athlete">
       <mat-header-cell *matHeaderCellDef mat-sort-header> athlete </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.athlete}} </mat-cell>
@@ -81,10 +81,10 @@
     </ng-container>
 
      -->
-    
+
     <ng-container matColumnDef="total">
       <mat-header-cell *matHeaderCellDef mat-sort-header> toal </mat-header-cell>
-      <mat-cell *matCellDef="let row" > {{row.total}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.total}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -97,21 +97,25 @@
 <hr>
 <h1>Voting Trends</h1>
 <hr>
-<div class="chartContainer mat-elevation-z8" >
-  <div class="bar" style="display: block; ">
-    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
-      [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+
+<div class="container">
+  <div class="row">
+    <div class="chartContainer mat-elevation-z8">
+      <div class="bar" style="display: block; ">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+          [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    
+      <div class="line" style="display: block; ">
+        <canvas baseChart class="chart" [datasets]="datasets" [labels]="labels" [options]="options" [chartType]="'line'">
+        </canvas>
+      </div>
+      <!-- <app-live-chart></app-live-chart> -->
+    </div>
+    
   </div>
-
-  <div class="line" style="display: block; ">
-    <canvas baseChart class="chart" [datasets]="datasets" [labels]="labels" [options]="options" [chartType]="'line'">
-    </canvas>
+  <div class="row">
+    <app-live-chart></app-live-chart>
   </div>
-
-  <div class="bar" style="display: block; ">
-      <canvas baseChart [datasets]="barChartData2"  [chartType]="barChartType" ></canvas>
-  </div>
-
-
-  <div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
 </div>
+

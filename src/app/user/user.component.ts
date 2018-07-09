@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
       },
        (err) => {
         if (err) { alert('Seesion Expired, login again!'); this.router.navigateByUrl('/login');
-    }
+     }
   }
     );
   // console.log(this.dataSource);

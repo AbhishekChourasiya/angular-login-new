@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild, AfterViewChecked, OnChanges, SimpleChange
 import { MatPaginator, MatTableDataSource, MatSort, MatCell } from '@angular/material';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
+import {LiveChartComponent} from '../dashboard/live-chart/live-chart.component';
 import { ChartsModule, BaseChartDirective } from 'ng2-charts/ng2-charts';
 import * as Chart from 'chart.js';
 @Component({

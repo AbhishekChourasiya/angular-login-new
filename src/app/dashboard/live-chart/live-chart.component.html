@@ -1,0 +1,22 @@
+speed :
+  <input type=text [(ngModel)]="speed" (input)="func($event.target.value)"> {{speed}}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="bar" style="display: block;  width:45%; float:left;  ">
+        <canvas baseChart class="chart" [datasets]="datasets" [labels]="labels" [options]="options" [chartType]="'bar'" (click)="clickData()">
+        </canvas>
+      </div>
+  
+  
+  
+    
+      <div class="line" style="display: block;  width:45%; float:right;  ">
+        <canvas baseChart class="chart"  [colors]="lineChartColors" [datasets]="datasets" [labels]="labels" [options]="options" [chartType]="'line'" (click)="clickData()">
+        </canvas>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>

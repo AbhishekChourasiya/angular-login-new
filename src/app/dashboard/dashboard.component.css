@@ -41,6 +41,25 @@
     float: left;
     margin-left: 20px;
   }
+
+  
+  div.livechart1{
+    display: flex;
+    width: 40%;
+    height: 200px;
+    background: #ffffff;
+    float: left;
+    margin-left: 0px;
+  }
+  div.livechart2{
+    display: flex;
+    width: 40%;
+    height: 200px;
+    background: #ffffff;
+    margin-left: 0px;
+    float: right;
+  }
+
   div.line{
     display: flex;
     width: 50%;

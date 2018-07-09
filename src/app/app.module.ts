@@ -22,6 +22,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import {MaterialModule   } from './material/material.module';
 import { ChartsModule } from 'ng2-charts';
+import { LiveChartComponent } from './dashboard/live-chart/live-chart.component';
+import { WuiegywreComponent } from './wuiegywre/wuiegywre.component';
 
 
 
@@ -32,7 +34,9 @@ import { ChartsModule } from 'ng2-charts';
     UserComponent,
     AboutComponent,
     ContactComponent,
-    DashboardComponent
+    DashboardComponent,
+    LiveChartComponent,
+    WuiegywreComponent
   ],
   imports: [
     MatSortModule,
