@@ -1,5 +1,7 @@
 <script src="node_modules/chart.js/src/chart.js"></script>
-
+<h1>
+  Dashboard
+</h1>
 <div class="example-header">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
@@ -11,24 +13,24 @@
   <mat-table #table [dataSource]="dataSource" matSort>
 
     <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> id </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> name </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="progress">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> progress </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Booth </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.progress}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="color">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> color </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.color}} </mat-cell>
     </ng-container>
 
 
-    <!-- 
+    <!--      
     <ng-container matColumnDef="athlete">
       <mat-header-cell *matHeaderCellDef mat-sort-header> athlete </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.athlete}} </mat-cell>
@@ -80,7 +82,13 @@
       <mat-cell *matCellDef="let row" > {{row.bronze}} </mat-cell>
     </ng-container>
 
-     -->
+      -->
+
+
+    <!-- this is implemenetation of a custom header using ag-grid angular library 
+  in which we can add custom html elements in the header -->
+    <app-chart2></app-chart2>
+
 
     <ng-container matColumnDef="total">
       <mat-header-cell *matHeaderCellDef mat-sort-header> toal </mat-header-cell>
@@ -98,24 +106,28 @@
 <h1>Voting Trends</h1>
 <hr>
 
+<app-live-chart></app-live-chart>
+
 <div class="container">
   <div class="row">
+    
     <div class="chartContainer mat-elevation-z8">
-      <div class="bar" style="display: block; ">
+        
+      <div class="bar" style="display: block;height: 354px;width: 45%; margin-left:-15px;">
+      <hr>
         <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
           [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
       </div>
-    
-      <div class="line" style="display: block; ">
+
+      <div class="line" style="display: block;height: 354px;width: 45%; margin-right:48px;">
+       <hr>
         <canvas baseChart class="chart" [datasets]="datasets" [labels]="labels" [options]="options" [chartType]="'line'">
         </canvas>
       </div>
       <!-- <app-live-chart></app-live-chart> -->
     </div>
-    
-  </div>
-  <div class="row">
-    <app-live-chart></app-live-chart>
-  </div>
-</div>
 
+  </div>
+
+
+</div>

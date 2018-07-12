@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,23 +8,17 @@ import {FormsModule} from '@angular/forms';
 })
 export class AppComponent {
   title = 'app';
-  showLogoutBtn = false;
+  showLogoutBtn = true;
   constructor(private router: Router) {
-
-  }
-  username: string;
-  password: string;
-  login(): void {
-    if (this.username === 'abhishek' && this.password === 'admin') {
-      this.router.navigate(['user']);
-    } else {
-      alert('Invalid credentails');
-    }
+   // window.sessionStorage.removeItem('Authorization');
   }
 
   logout(): void {
     window.sessionStorage.removeItem('Authorization');
-    alert('Successfully logged out');
+    window.sessionStorage.setItem('Authorization', null);
+    window.sessionStorage.clear();
+    alert('Successfully logged out, app comp');
+   // window.sessionStorage.removeItem('Authorization');
     this.router.navigate(['login']);
   }
 

@@ -12,23 +12,24 @@ const httpOptions = {
 @Injectable()
 export class AppService {
     users;
-    auth_token;
+    // auth_token;
     constructor(private http: HttpClient) {
-        this.auth_token = window.sessionStorage.getItem('Authorization');
+        // this.auth_token = window.sessionStorage.getItem('Authorization');
         const headers = new Headers({
             'Content-Type': 'application/json',
-            'Authorization': this.auth_token
+            'Authorization': window.sessionStorage.getItem('Authorization')
           });
      }
 
     private userUrl = 'http://localhost:8080';
     private atheletesURL = 'https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json';
+    // auth_token = window.sessionStorage.getItem('Authorization');
     public getUsers(): Observable<User[]> {
 
 
         return this.http.options<User[]>(this.userUrl + '/user',
         {
-            headers: new HttpHeaders().set('Authorization', this.auth_token)
+            headers: new HttpHeaders().set('Authorization', window.sessionStorage.getItem('Authorization'))
           }
          );
         }

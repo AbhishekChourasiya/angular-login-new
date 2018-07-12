@@ -34,6 +34,7 @@ export class UserComponent implements OnInit {
   }
   logout(): void {
     window.sessionStorage.removeItem('Authorization');
+    window.sessionStorage.clear();
     alert('Successfully logged out');
     this.router.navigate(['login']);
   }

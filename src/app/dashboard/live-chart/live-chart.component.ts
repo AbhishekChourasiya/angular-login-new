@@ -1,6 +1,7 @@
 import { Component,  Input, OnInit,
    Pipe, ViewChild, ElementRef, AfterContentChecked, AfterContentInit, AfterViewInit } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts/ng2-charts';
+import { AgGridModule } from 'ag-grid-angular';
 
 @Component({
   moduleId: module.id,

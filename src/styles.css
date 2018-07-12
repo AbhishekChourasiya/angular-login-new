@@ -1,6 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* You can add global styles to this file, and also import other style files */
+@import "~ag-grid/dist/styles/ag-grid.css";
+@import "~ag-grid/dist/styles/ag-theme-balham.css";
+
 body{
 margin: 0px !important;
 
+}
+
+
+.ag-theme-balham .ag-header{
+   
+    height: 50px !important;
+    
+}
+.ag-theme-balham .ag-header-row:last-child{
+   /* background-color: red; */
+    height:60px !important;
+    
 }

@@ -24,6 +24,7 @@ import {MaterialModule   } from './material/material.module';
 import { ChartsModule } from 'ng2-charts';
 import { LiveChartComponent } from './dashboard/live-chart/live-chart.component';
 import { WuiegywreComponent } from './wuiegywre/wuiegywre.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 
 
@@ -55,7 +56,8 @@ import { WuiegywreComponent } from './wuiegywre/wuiegywre.component';
     BrowserModule,
     MaterialModule,
     MatTableModule,
-    ChartsModule
+    ChartsModule,
+    AgGridModule.withComponents([WuiegywreComponent])
   ],
   exports: [
     MatSortModule,

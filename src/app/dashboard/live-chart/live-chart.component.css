@@ -1,4 +1,4 @@
-
+/* 
 .chart {
   display: block;
   color: blue;
@@ -16,7 +16,7 @@
 .chartAreaWrapper {
       overflow-x: scroll;
         position: relative;
-        width: 100%;
+        width: 80%;
     }
 
     .chartAreaWrapper2 {
@@ -26,4 +26,89 @@
     }
 .livechart1{
     width: 40% !important;
-}
+} */
+
+
+ 
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 90%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  .mat-header-cell{
+    color: red;
+    font-size: 18px;
+  }
+  .chart {
+    display: block;
+  }
+
+  div.bar, div.line {
+  max-width: 100%;
+  }
+
+  div.bar{
+    display: flex;
+    width: 40%;
+    height: 500px;
+    background: #ffffff;
+    float: left;
+    /* margin-left: 10px; */
+  }
+
+  
+  div.livechart1{
+    display: flex;
+    width: 40%;
+    height: 200px;
+    background: #ffffff;
+    float: left;
+    margin-left: 0px;
+  }
+  div.livechart2{
+    display: flex;
+    width: 40%;
+    height: 200px;
+    background: #ffffff;
+    margin-left: 0px;
+    float: right;
+  }
+
+  div.line{
+    display: flex;
+    width: 40%;
+    background: #ffffff;
+    height: 500px;
+    float: right;
+    /* margin-right: 10px; */
+  }
+
+  div.chartContainer{
+  
+    
+    width: 90%;
+    margin: 0 auto;
+  }
+
+ 
+  *{
+    margin-left: 20px;
+    margin-right: 20px;
+  }

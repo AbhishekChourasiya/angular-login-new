@@ -1,5 +1,13 @@
 
 mat-card{
-    
-    
+   margin-left:30%; 
+    margin-right:30%; 
+    margin-top:10%; 
+}
+.example-form{
+   margin-left: 25%; 
+}
+.mat-card-actions .mat-button:first-child, .mat-card-actions .mat-raised-button:first-child {
+    margin-left: 16px;
+    margin-right: 0;
 }

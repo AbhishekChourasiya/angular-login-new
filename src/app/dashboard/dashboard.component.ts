@@ -60,8 +60,8 @@ dataSource: MatTableDataSource<UserData>;
 users: UserData[];
 constructor(private router: Router, private userService: AppService) {
     // Create 100 users
-    this.users = [];
-    for (let i = 1; i <= 100; i++) { this.users.push(createNewUser(i)); }
+     this.users = [];
+ for (let i = 1; i <= 100; i++) { this.users.push(createNewUser(i)); }
 
     //  Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(this.users);
@@ -105,11 +105,11 @@ updateChart(): any {
 
     private chartHovered(e: any): void {
     console.log(e);
-}
+ }
 ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-    this.updateChart();
+   this.dataSource.sort = this.sort;
+   this.updateChart();
 }
 
 
